@@ -11,9 +11,9 @@ const init = (server) => {
         next();
     });
     
-    server.post('/register', validation.validateBody(), authService.register);
+    server.post('/register', validation.validateBody, authService.register);
 
-    server.post('/login', validation.validateBody(), authService.login);
+    server.post('/login', validation.validateBody, authService.login);
 
     server.get('/getusers', authClientRequest.authClientToken ,userService.getAllUsers);
     }

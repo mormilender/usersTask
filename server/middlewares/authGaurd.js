@@ -14,7 +14,6 @@ const authClientToken = async (req,res,next) => {
             }]
         });
     } 
-    
     jwt.verify(token,config.secret , (err,decoded) => {
         if(err){
             return res.status(401).json({
@@ -23,6 +22,7 @@ const authClientToken = async (req,res,next) => {
                 }]
             });
         }
+
         return next();
         
     });
